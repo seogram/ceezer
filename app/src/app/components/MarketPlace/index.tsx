@@ -5,14 +5,13 @@ import Projects from "../Projects/Projects";
 import Wrapper from "../Wrapper";
 
 const MarketPlace = () => {
-  // const searchParams = useSearchParams();
+  const searchParams = useSearchParams();
   const [searchTerm, setSearchTerm] = useState<string | undefined | null>();
-  // const query = searchParams.get("key");
+  const query = searchParams.get("key");
 
-
-  // useEffect(() => {
-  //   setSearchTerm(query ?? undefined);
-  // }, [query]);
+  useEffect(() => {
+    setSearchTerm(query ?? undefined);
+  }, [query]);
 
   return (
     <Wrapper>

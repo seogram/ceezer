@@ -57,7 +57,6 @@ function ProductAction() {
         render={({ field, fieldState: { error } }) => (
           <InputStyle
             {...field}
-            autoFocus
             type="number"
             inputProps={{
               min: 0,

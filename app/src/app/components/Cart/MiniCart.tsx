@@ -45,7 +45,7 @@ const MiniCart = ({ totalCost, cartItems }: any) => {
         >
             <StyledPaper data-testid="cart">
                 {
-                    cartItems.length < 1 ? (
+                    cartItems?.length < 1 ? (
                         <Typography>
                             There is no item in shopping cart.
                         </Typography>
@@ -61,7 +61,7 @@ const MiniCart = ({ totalCost, cartItems }: any) => {
                                         </TableRow>
                                     </TableHead>
                                     <TableBody>
-                                        {cartItems.map((item) => {
+                                        {cartItems?.map((item) => {
                                             const product = item.product;
                                             return (
                                                 <TableRow
@@ -116,7 +116,7 @@ const MiniCart = ({ totalCost, cartItems }: any) => {
 
     return (
         <>
-            <Badge badgeContent={cartItems.length} color="secondary">
+            <Badge badgeContent={cartItems?.length} color="secondary">
                 <IconButton
                     size="large"
                     edge="end"

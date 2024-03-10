@@ -22,7 +22,7 @@ const Header = ({noCart = false} :{noCart?: boolean}) => (
 
                 <Box sx={{ flexGrow: 1 }} />
                 {!noCart && (
-                <Box sx={{ display: { xs: "flex" } }}>
+                <Box sx={{ display: { xs: "flex" } , pt:3 }}>
                     <Cart />
                 </Box>
 

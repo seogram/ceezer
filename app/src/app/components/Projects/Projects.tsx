@@ -1,11 +1,11 @@
 import React from "react";
-import { Box, Stack } from "@mui/material";
+import { Typography, Button, Box, Stack } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import { useData } from "../../hooks";
 import ProjectDetail from "../ProjectDetail/ProjectDetail";
 import Error from "../Error/Error";
 import Loading from "../Loading/Loading";
-// import { useRouter } from "next/navigation";
+import { useRouter } from "next/navigation";
 import { Projects } from "../../type";
 
 const RootStyle = styled(Stack)(() => ({
@@ -22,12 +22,12 @@ type useProjectDataReturn = {
   isError: boolean;
 };
 
-const renderDetails = (projects: Projects) => 
-projects?.map(project => <ProjectDetail projectData={project} key={project.id} />)
+const renderDetails = (projects: Projects) =>
+  projects.map(project => <ProjectDetail projectData={project} key={project.id} />)
 
 
 const Projects = ({ searchTerm }: Props) => {
-  // const router = useRouter();
+  const router = useRouter();
 
   const {
     data: projects,
@@ -42,10 +42,15 @@ const Projects = ({ searchTerm }: Props) => {
   if (isUserFetching) {
     return <Loading />;
   }
+  const filterByName = () => {
+   return projects.filter(project => project.name.search(searchTerm!) > -1);
+  }
+  
+  const filteredProjects = searchTerm ? filterByName() : projects
 
   return (
     <RootStyle>
-      {/* {searchTerm && (
+      {searchTerm && (
         <Box sx={{ display: "flex", }}>
           <Box>
             <Typography data-test-id="result">
@@ -58,9 +63,9 @@ const Projects = ({ searchTerm }: Props) => {
             </Button>
           </Box>
         </Box>
-      )} */}
+      )}
       <Box>
-        {renderDetails(projects)}
+        {renderDetails(filteredProjects)}
       </Box>
     </RootStyle>
   );

@@ -1,5 +1,6 @@
 import useCart from "./useCart";
 // import { IProduct } from "../external/product";
+import { setLocalStorage } from "../utils";
 
 const useAddItem = () => {
   const { cartItems, setCartItems } = useCart();
@@ -21,7 +22,9 @@ const useAddItem = () => {
     }
 
     // Update the cart items
+    setLocalStorage("cart" , currentCartItems)
     setCartItems(currentCartItems);
+
   };
 
   return { addItem };

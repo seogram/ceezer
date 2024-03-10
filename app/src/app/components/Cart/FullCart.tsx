@@ -14,8 +14,6 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import { CustomeLink } from "..";
 
-import { useTheme } from "@mui/material/styles";
-
 const StyledBox = styled(Box)(({ theme }) => ({
     padding: theme.spacing(2),
     ...theme.typography.body2,
@@ -23,8 +21,6 @@ const StyledBox = styled(Box)(({ theme }) => ({
 }));
 
 const FullCart = ({ totalCost, cartItems }: any) => {
-    const theme = useTheme();
-
     const router = useRouter();
     const { removeItem } = useRemoveItem();
     const { addItem } = useAddItem();
@@ -32,7 +28,7 @@ const FullCart = ({ totalCost, cartItems }: any) => {
     return (
         <StyledBox data-testid="cart">
             {
-                cartItems.length < 1 ? (
+                cartItems?.length < 1 ? (
                     <Stack direction="column">
                         <Typography>
                             There is no item in shopping cart.
@@ -57,7 +53,7 @@ const FullCart = ({ totalCost, cartItems }: any) => {
                                     </TableRow>
                                 </TableHead>
                                 <TableBody>
-                                    {cartItems.map((item) => {
+                                    {cartItems?.map((item) => {
                                         const product = item.product;
 
                                         return (

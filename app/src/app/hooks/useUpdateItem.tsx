@@ -1,4 +1,6 @@
 import useCart from "./useCart";
+import { setLocalStorage } from "../utils";
+
 // import { IProduct } from "../external/product";
 
 const useUpdateItem = () => {
@@ -23,6 +25,7 @@ const useUpdateItem = () => {
       throw new Error("removeFromCart: Product does not exist.");
     }
 
+    setLocalStorage("cart" , currentCartItems)
     setCartItems(currentCartItems);
   };
 

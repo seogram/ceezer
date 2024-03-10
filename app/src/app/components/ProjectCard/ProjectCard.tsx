@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
 import ProjectCardContext from './ProjectCardContext';
-import { Project, addToCard } from '../../type';
+import { Project } from '../../type';
 import { Box, Stack } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import { useResponsive } from '../../hooks';
