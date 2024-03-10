@@ -1,8 +1,9 @@
+import React from "react";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "./globals.css";
-
-const inter = Inter({ subsets: ["latin"] });
+import { AppRouterCacheProvider } from "@mui/material-nextjs/v13-appRouter";
+import { ReactQueryProvider } from "./ReactQueryProvider";
+import ThemeProvider from "../theme";
+import { CartItemsProvider } from "./context/cartItems";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -14,9 +15,21 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
-    </html>
+    <ThemeProvider>
+      <html lang="en">
+        <body>
+          <ReactQueryProvider>
+            <AppRouterCacheProvider>
+              <CartItemsProvider>
+                {children}
+              </CartItemsProvider>
+            </AppRouterCacheProvider>
+          </ReactQueryProvider>
+
+        </body>
+      </html>
+    </ThemeProvider>
   );
 }

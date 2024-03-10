@@ -1,8 +1,8 @@
 "use client";
 
-import styles from "./page.module.css";
 import { Suspense } from "react";
-import {Container , Loading} from "./components";
+import { MarketPlace, Loading } from "./components";
+import Header from "./components/Header/Header";
 
 function SearchBarFallback() {
   return <Loading />;
@@ -10,10 +10,11 @@ function SearchBarFallback() {
 
 export default function Home() {
   return (
-    <main className={styles.main}>
-      <Suspense fallback={<SearchBarFallback />}>
-        <Container />
-      </Suspense>
+    <main>
+        <Suspense fallback={<SearchBarFallback />}>
+          <Header />
+          <MarketPlace />
+        </Suspense>
     </main>
   );
 }
