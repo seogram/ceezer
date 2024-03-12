@@ -1,28 +1,25 @@
 import useCart from "./useCart";
-// import { IProduct } from "../external/product";
 import { setLocalStorage } from "../utils";
+import { cartItem } from "../type";
 
 const useAddItem = () => {
   const { cartItems, setCartItems } = useCart();
 
-  const addItem = (product: any) => {
+  const addItem = (cartItem: cartItem) => {
     const currentCartItems = [...cartItems];
     const existingCartItem = currentCartItems.find(
-      (item) => item.product.id === product.id
+      (item) => item.id === cartItem.id
     );
 
-    // If the product is already in the cart, update the quantity
     if (existingCartItem) {
-      existingCartItem.quantity += 1;
+      existingCartItem.volume += cartItem.volume;
     } else {
-      currentCartItems.push({
-        product,
-        quantity: 1,
-      });
+      currentCartItems.push(
+        cartItem,
+      );
     }
 
-    // Update the cart items
-    setLocalStorage("cart" , currentCartItems)
+    setLocalStorage("cart", currentCartItems)
     setCartItems(currentCartItems);
 
   };

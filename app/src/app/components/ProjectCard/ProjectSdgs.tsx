@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
-import { useProjectCardContext } from './ProjectCardContext';
+import { useProjectCardContext } from '@/app/context/ProjectCardContext';
 import { Button, Stack, Typography, Tooltip, ClickAwayListener } from "@mui/material";
-
-import { Project } from "../../type";
+import { Project } from "@/app/type";
 
 const renderSdg = (sdgs: Project["sdgs"]) => {
   return sdgs.slice(0, 3).map(sdg => `${sdg} `)
@@ -16,7 +15,7 @@ const displayMoreItems = (sdgs: Project["sdgs"]) => {
   )
 
 }
-function ProductDelovery() {
+function ProjectSdgs() {
   const { project: { sdgs } } = useProjectCardContext();
   const [open, setOpen] = useState(false);
 
@@ -33,7 +32,7 @@ function ProductDelovery() {
 
   return (
     <Stack direction="row" spacing={2} alignItems="center">
-      <Typography data-test-id="bicycleDelivery">SDGS: {renderSdg(sdgs)} </Typography>
+      <Typography data-test-id="sdgs">SDGS: {renderSdg(sdgs)} </Typography>
       {shouldDisplayMorItems && (
         <ClickAwayListener onClickAway={handleTooltipClose}>
           <div>
@@ -58,4 +57,4 @@ function ProductDelovery() {
   )
 }
 
-export default ProductDelovery;
+export default ProjectSdgs;

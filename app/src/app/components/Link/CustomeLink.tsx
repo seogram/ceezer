@@ -1,19 +1,21 @@
 import React from "react";
 import Link from 'next/link';
 import { Typography } from "@mui/material";
-import { useTheme } from "@mui/material/styles";
+import { styled } from "@mui/material/styles";
 
 
-const CustomeLink = ({children , href}:{children: React.ReactNode, href: string}) => {
-  const theme = useTheme();
+const StyledLink = styled(Link)(() => ({
+  textDecoration: "none"
+}));
+
+const CustomeLink = ({ children, href }: { children: React.ReactNode, href: string }) => {
   return (
-    <Link href={href}
-      style={{ textDecoration: "none" }}
+    <StyledLink href={href}
     >
       <Typography color="primary">
         {children}
       </Typography>
-    </Link>
+    </StyledLink>
   );
 }
 

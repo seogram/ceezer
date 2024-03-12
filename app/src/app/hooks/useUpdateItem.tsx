@@ -1,31 +1,28 @@
 import useCart from "./useCart";
 import { setLocalStorage } from "../utils";
-
-// import { IProduct } from "../external/product";
+import { cartItem } from "../type";
 
 const useUpdateItem = () => {
   const { cartItems, setCartItems } = useCart();
 
-  const updateItem = (product: any) => {
+  const updateItem = (product: cartItem, action: "INCREASE" | "DECREASE") => {
     const currentCartItems = [...cartItems];
     const existingCartItem = currentCartItems.find(
-      (item) => item.product.id === product.id
+      (item) => item.id === product.id
     );
 
-    // if the product exists in the cart
-    if (existingCartItem) {
-      if (existingCartItem.product.volume > 1) {
-        // minus quantity by one
-        existingCartItem.quantity -= 1;
-      } else {
-        // remove the whole cart item
-        currentCartItems.splice(currentCartItems.indexOf(existingCartItem), 1);
-      }
-    } else {
-      throw new Error("removeFromCart: Product does not exist.");
+    if (!existingCartItem) {
+      throw new Error("updateCartItem: Product does not exist.");
+    }
+    if (action === "INCREASE") {
+      existingCartItem.volume += 0.5;
     }
 
-    setLocalStorage("cart" , currentCartItems)
+    if (action === "DECREASE") {
+      existingCartItem.volume <= 0.5 ? currentCartItems.splice(currentCartItems.indexOf(existingCartItem), 1) : existingCartItem.volume -= 0.5;
+    }
+
+    setLocalStorage("cart", currentCartItems)
     setCartItems(currentCartItems);
   };
 

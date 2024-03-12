@@ -1,10 +1,10 @@
 import * as React from 'react';
-import { useProjectCardContext } from './ProjectCardContext';
+import { useProjectCardContext } from '@/app/context/ProjectCardContext';
 import { Typography } from "@mui/material";
 
-function ProductDelovery() {
+function ProjectWeight() {
   const { project } = useProjectCardContext();
-  return <Typography data-test-id="bicycleDelivery">Distributon: {project.distribution_weight}</Typography>;
+  return <Typography data-test-id="weight">Distributon: {project.distribution_weight}</Typography>;
 }
 
-export default ProductDelovery;
+export default ProjectWeight;

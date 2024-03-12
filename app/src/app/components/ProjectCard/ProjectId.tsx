@@ -1,9 +1,9 @@
-import { useProjectCardContext } from './ProjectCardContext';
+import { useProjectCardContext } from '@/app/context/ProjectCardContext';
 import { Typography } from "@mui/material";
 
-function ProductId() {
+function ProjectId() {
   const { project } = useProjectCardContext();
-  return <Typography data-test-id="bicycleId">ID: {project.id}</Typography>;
+  return <Typography data-test-id="id">ID: {project.id}</Typography>;
 }
 
-export default ProductId;
+export default ProjectId;

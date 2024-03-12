@@ -86,14 +86,14 @@ const typography = {
     fontWeight: 600,
     lineHeight: 20 / 12,
     fontSize: pxToRem(12),
-    textTransform: "uppercase",
+    textTransform: "uppercase" as const,
   },
   button: {
     fontFamily: FONT_PRIMARY,
     fontWeight: 600,
     lineHeight: 24 / 14,
     fontSize: pxToRem(14),
-    textTransform: "capitalize",
+    textTransform: "capitalize" as const,
   },
 };
 

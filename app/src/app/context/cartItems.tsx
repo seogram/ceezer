@@ -2,17 +2,16 @@
 "use client";
 
 import { createContext, ReactNode } from "react";
-
 import { useState, useEffect } from "react";
-// import { ICartItem } from "../external/cart";
 import { setLocalStorage, getLocalStorage } from "../utils";
+import { cartItem } from "../type";
 
-interface ICartItemsContext {
-  cartItems: any[];
-  setCartItems: (cartItems: any[]) => void;
+type CartItemsContext = {
+  cartItems: cartItem[],
+  setCartItems: (cartItems: cartItem[]) => void
 }
 
-export const CartItemsContext = createContext<ICartItemsContext>({
+export const CartItemsContext = createContext<CartItemsContext>({
   cartItems: [],
   setCartItems: () => { },
 });

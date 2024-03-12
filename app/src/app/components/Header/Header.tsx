@@ -6,8 +6,13 @@ import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import { Cart } from "..";
+import styled from "@emotion/styled";
 
-const Header = ({noCart = false} :{noCart?: boolean}) => (
+const StyledBox = styled(Box)(() => ({
+    display: "flex", pt: 3
+}));
+
+const Header = ({ noCart = false }: { noCart?: boolean }) => (
     <Box sx={{ flexGrow: 1 }}>
         <AppBar position="static">
             <Toolbar>
@@ -22,9 +27,9 @@ const Header = ({noCart = false} :{noCart?: boolean}) => (
 
                 <Box sx={{ flexGrow: 1 }} />
                 {!noCart && (
-                <Box sx={{ display: { xs: "flex" } , pt:3 }}>
-                    <Cart />
-                </Box>
+                    <StyledBox >
+                        <Cart />
+                    </StyledBox>
 
                 )}
             </Toolbar>

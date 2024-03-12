@@ -1,17 +1,23 @@
 import * as React from 'react';
-import { useProjectCardContext } from './ProjectCardContext';
-import { Typography, Divider } from "@mui/material";
+import { useProjectCardContext } from '@/app/context/ProjectCardContext';
+import { Typography, Divider, styled } from "@mui/material";
 
-function ProductDelovery() {
+
+const DividerStyle = styled(Divider)(() => ({
+  width : "95%",my:1
+}));
+
+function ProjectDescription() {
   const { project } = useProjectCardContext();
+
   return  (
     <>
-    <Divider sx={{width : "95%",my:1}}/>
-    <Typography data-test-id="bicycleDelivery">{project.description}</Typography>
-    <Divider sx={{width : "95%",my:1}}/>
+    <DividerStyle />
+    <Typography data-test-id="description">{project.description}</Typography>
+    <DividerStyle />
   </>
   )
 
 }
 
-export default ProductDelovery;
+export default ProjectDescription;

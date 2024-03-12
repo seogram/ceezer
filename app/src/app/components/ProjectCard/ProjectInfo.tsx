@@ -4,8 +4,8 @@ export type Props = {
   children: ReactNode;
 };
 
-function ProductInfo({ children }: Props) {
+function ProjectInfo({ children }: Props) {
   return <div>{children}</div>;
 }
 
-export default ProductInfo;
+export default ProjectInfo;

@@ -20,7 +20,7 @@ describe("SearchBox Component", () => {
     const router = useRouter();
     const { getByPlaceholderText, getByText } = render(<SearchBox />);
 
-    const inputElement = getByPlaceholderText("Bicycle name or id");
+    const inputElement = getByPlaceholderText("Project name");
     const buttonElement = getByText("Search");
 
     act(() => {

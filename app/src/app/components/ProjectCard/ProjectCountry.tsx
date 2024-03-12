@@ -1,10 +1,10 @@
 import * as React from 'react';
-import { useProjectCardContext } from './ProjectCardContext';
+import { useProjectCardContext } from '@/app/context/ProjectCardContext';
 import { Typography } from "@mui/material";
 
-function ProductDelovery() {
+function ProjectCountry() {
   const { project } = useProjectCardContext();
-  return <Typography data-test-id="bicycleDelivery">Country: {project.country}</Typography>;
+  return <Typography data-test-id="country">Country: {project.country}</Typography>;
 }
 
-export default ProductDelovery;
+export default ProjectCountry;

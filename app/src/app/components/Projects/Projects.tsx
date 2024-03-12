@@ -1,15 +1,21 @@
 import React from "react";
 import { Typography, Button, Box, Stack } from "@mui/material";
 import { styled } from "@mui/material/styles";
-import { useData } from "../../hooks";
+import { useData } from "@/app/hooks";
 import ProjectDetail from "../ProjectDetail/ProjectDetail";
 import Error from "../Error/Error";
 import Loading from "../Loading/Loading";
 import { useRouter } from "next/navigation";
-import { Projects } from "../../type";
+import { Projects as ProjectsType } from "@/app/type";
 
 const RootStyle = styled(Stack)(() => ({
   gap: "20px",
+}));
+
+const StyledBox = styled(Box)(() => ({
+  display: "flex", 
+  alignItems: "center", 
+  justifyContent: "space-between"
 }));
 
 type Props = {
@@ -17,12 +23,12 @@ type Props = {
 };
 
 type useProjectDataReturn = {
-  data: Projects;
+  data: ProjectsType;
   isFetching: boolean;
   isError: boolean;
 };
 
-const renderDetails = (projects: Projects) =>
+const renderDetails = (projects: ProjectsType) =>
   projects.map(project => <ProjectDetail projectData={project} key={project.id} />)
 
 
@@ -43,26 +49,27 @@ const Projects = ({ searchTerm }: Props) => {
     return <Loading />;
   }
   const filterByName = () => {
-   return projects.filter(project => project.name.search(searchTerm!) > -1);
+    const keyword = searchTerm?.toLowerCase();
+    return projects.filter(project => project.name.toLowerCase().search(keyword!) > -1);
   }
-  
+
   const filteredProjects = searchTerm ? filterByName() : projects
 
   return (
     <RootStyle>
       {searchTerm && (
-        <Box sx={{ display: "flex", }}>
+        <StyledBox >
           <Box>
             <Typography data-test-id="result">
-              {`Showing bicycles for  ${searchTerm} :`}
+              {`Showing Projects for :  ${searchTerm} `}
             </Typography>
           </Box>
-          <Box sx={{ marginLeft: "auto" }}>
+          <Box >
             <Button name="reset" onClick={() => router.replace("/")}>
               Reset Result
             </Button>
           </Box>
-        </Box>
+        </StyledBox>
       )}
       <Box>
         {renderDetails(filteredProjects)}

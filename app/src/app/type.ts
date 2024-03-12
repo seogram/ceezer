@@ -14,5 +14,10 @@ export type Project = {
 };
 export type Projects = Project[];
 
-
-export type addToCard= (volume: number, id: string) => void
+export type cartItem = {
+    id: string;
+    name : string;
+    volume: number;
+    pricePerTon : number;
+    image? : string;
+}

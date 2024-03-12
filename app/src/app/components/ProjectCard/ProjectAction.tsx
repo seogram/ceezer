@@ -1,16 +1,16 @@
 import * as React from 'react';
-import { useProjectCardContext } from './ProjectCardContext';
+import { useProjectCardContext } from '@/app/context/ProjectCardContext';
 import { Button, Stack, InputBase } from "@mui/material";
 import { Controller, useForm } from "react-hook-form";
 import { styled } from "@mui/material/styles";
-import { useAddItem } from '../../hooks';
+import { useAddItem } from '@/app/hooks';
 
 type Volume = {
-  volume: number | string;
+  volume: string;
 }
 
 const InputStyle = styled(InputBase)(({ theme }) => ({
-  paddingLeft: "10px",
+  paddingLeft: "1rem",
   border: "1px solid",
   width: "10%",
   [theme.breakpoints.down("sm")]: {
@@ -42,7 +42,8 @@ function ProductAction() {
       id: project.id,
       name : project.name,
       volume,
-      pricePerTon : project.price_per_ton
+      pricePerTon : project.price_per_ton,
+      image :project.image
     })
   }
 

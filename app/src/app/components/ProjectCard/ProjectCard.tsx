@@ -1,9 +1,9 @@
 import { ReactNode } from 'react';
-import ProjectCardContext from './ProjectCardContext';
-import { Project } from '../../type';
+import ProjectCardContext from '@/app/context/ProjectCardContext';
+import { Project } from '@/app/type';
 import { Box, Stack } from "@mui/material";
 import { styled } from "@mui/material/styles";
-import { useResponsive } from '../../hooks';
+import { useResponsive } from '@/app/hooks';
 import {
     ProjectId, ProjectImage, ProjectTitle, ProjectDelivery, ProjectPrice,
     ProjectCountry, ProjectDescription, ProjectSdgs, ProjectInfo, ProjectSupplier,

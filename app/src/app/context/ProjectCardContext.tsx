@@ -1,5 +1,5 @@
 import { createContext, useContext } from 'react';
-import { Project } from '../../type';
+import { Project } from '../type';
 
 const ProjectCardContext = createContext<{ project: Project } | null>(null);
 
