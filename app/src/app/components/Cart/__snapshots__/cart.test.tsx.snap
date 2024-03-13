@@ -1,0 +1,292 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Cart component renders without crashing 1`] = `
+<DocumentFragment>
+  <div
+    class="MuiBox-root css-1b5cjn8"
+    data-testid="cart"
+  >
+    <div
+      class="MuiStack-root css-155h7j6-MuiStack-root"
+    >
+      <div
+        class="MuiBox-root css-1rr4qq7"
+      >
+        <div
+          class="MuiBox-root css-1em3tkh"
+        >
+          <h6
+            class="MuiTypography-root MuiTypography-h6 css-2ulfj5-MuiTypography-root"
+          >
+            EverGreen CarbonScape
+          </h6>
+          <p
+            class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+          >
+            Price per ton: €650.00
+          </p>
+          <p
+            class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+          >
+            Volume(ton): 1
+          </p>
+          <p
+            class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+          >
+            Total Price: €650.00
+          </p>
+        </div>
+        <div
+          class="MuiStack-root css-kdc3n8-MuiStack-root"
+        >
+          <button
+            class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeLarge css-mf1cb5-MuiButtonBase-root-MuiIconButton-root"
+            data-testid="decrease-volume"
+            tabindex="0"
+            type="button"
+          >
+            -
+            <span
+              class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+            />
+          </button>
+          <div
+            class="MuiBox-root css-0"
+          >
+            1
+          </div>
+          <button
+            class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeLarge css-mf1cb5-MuiButtonBase-root-MuiIconButton-root"
+            data-testid="increase-volume"
+            tabindex="0"
+            type="button"
+          >
+            +
+            <span
+              class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+            />
+          </button>
+          <div
+            class="MuiBox-root css-zjuml4"
+          >
+            <button
+              class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit MuiIconButton-edgeEnd MuiIconButton-sizeLarge css-1f5y6oa-MuiButtonBase-root-MuiIconButton-root"
+              data-testid="remove-item"
+              tabindex="0"
+              type="button"
+            >
+              <svg
+                aria-hidden="true"
+                class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                data-testid="DeleteOutlineIcon"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6zM8 9h8v10H8zm7.5-5-1-1h-5l-1 1H5v2h14V4z"
+                />
+              </svg>
+              <span
+                class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+              />
+            </button>
+          </div>
+        </div>
+      </div>
+      <div
+        class="MuiBox-root css-0"
+      >
+        <img
+          alt="EverGreen CarbonScape"
+          data-nimg="1"
+          decoding="async"
+          height="160"
+          loading="lazy"
+          src="/_next/image?url=https%3A%2F%2Fceezer-public-assets.s3.eu-central-1.amazonaws.com%2Fproject_type_sample_images%2FFugitives%2F38bb530f5caf513be9f2a41f2d909f47-min.jpeg&w=384&q=75"
+          srcset="/_next/image?url=https%3A%2F%2Fceezer-public-assets.s3.eu-central-1.amazonaws.com%2Fproject_type_sample_images%2FFugitives%2F38bb530f5caf513be9f2a41f2d909f47-min.jpeg&w=256&q=75 1x, /_next/image?url=https%3A%2F%2Fceezer-public-assets.s3.eu-central-1.amazonaws.com%2Fproject_type_sample_images%2FFugitives%2F38bb530f5caf513be9f2a41f2d909f47-min.jpeg&w=384&q=75 2x"
+          style="color: transparent;"
+          width="150"
+        />
+      </div>
+      <div
+        class="MuiBox-root css-130f8nx"
+      >
+        <button
+          class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit MuiIconButton-edgeEnd MuiIconButton-sizeLarge css-1f5y6oa-MuiButtonBase-root-MuiIconButton-root"
+          tabindex="0"
+          type="button"
+        >
+          <svg
+            aria-hidden="true"
+            class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+            data-testid="DeleteOutlineIcon"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6zM8 9h8v10H8zm7.5-5-1-1h-5l-1 1H5v2h14V4z"
+            />
+          </svg>
+          <span
+            class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+          />
+        </button>
+      </div>
+    </div>
+    <div
+      class="MuiStack-root css-155h7j6-MuiStack-root"
+    >
+      <div
+        class="MuiBox-root css-1rr4qq7"
+      >
+        <div
+          class="MuiBox-root css-1em3tkh"
+        >
+          <h6
+            class="MuiTypography-root MuiTypography-h6 css-2ulfj5-MuiTypography-root"
+          >
+            SustainaForest Carbon
+          </h6>
+          <p
+            class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+          >
+            Price per ton: €50.00
+          </p>
+          <p
+            class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+          >
+            Volume(ton): 2
+          </p>
+          <p
+            class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+          >
+            Total Price: €100.00
+          </p>
+        </div>
+        <div
+          class="MuiStack-root css-kdc3n8-MuiStack-root"
+        >
+          <button
+            class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeLarge css-mf1cb5-MuiButtonBase-root-MuiIconButton-root"
+            data-testid="decrease-volume"
+            tabindex="0"
+            type="button"
+          >
+            -
+            <span
+              class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+            />
+          </button>
+          <div
+            class="MuiBox-root css-0"
+          >
+            2
+          </div>
+          <button
+            class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeLarge css-mf1cb5-MuiButtonBase-root-MuiIconButton-root"
+            data-testid="increase-volume"
+            tabindex="0"
+            type="button"
+          >
+            +
+            <span
+              class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+            />
+          </button>
+          <div
+            class="MuiBox-root css-zjuml4"
+          >
+            <button
+              class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit MuiIconButton-edgeEnd MuiIconButton-sizeLarge css-1f5y6oa-MuiButtonBase-root-MuiIconButton-root"
+              data-testid="remove-item"
+              tabindex="0"
+              type="button"
+            >
+              <svg
+                aria-hidden="true"
+                class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                data-testid="DeleteOutlineIcon"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6zM8 9h8v10H8zm7.5-5-1-1h-5l-1 1H5v2h14V4z"
+                />
+              </svg>
+              <span
+                class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+              />
+            </button>
+          </div>
+        </div>
+      </div>
+      <div
+        class="MuiBox-root css-0"
+      >
+        <img
+          alt="SustainaForest Carbon"
+          data-nimg="1"
+          decoding="async"
+          height="160"
+          loading="lazy"
+          src="/_next/image?url=https%3A%2F%2Fceezer-public-assets.s3.eu-central-1.amazonaws.com%2Fproject_type_sample_images%2FAfforestation%2Breforestation%2Fmarita-kavelashvili-ugnrXk1129g-unsplash-min.jpg&w=384&q=75"
+          srcset="/_next/image?url=https%3A%2F%2Fceezer-public-assets.s3.eu-central-1.amazonaws.com%2Fproject_type_sample_images%2FAfforestation%2Breforestation%2Fmarita-kavelashvili-ugnrXk1129g-unsplash-min.jpg&w=256&q=75 1x, /_next/image?url=https%3A%2F%2Fceezer-public-assets.s3.eu-central-1.amazonaws.com%2Fproject_type_sample_images%2FAfforestation%2Breforestation%2Fmarita-kavelashvili-ugnrXk1129g-unsplash-min.jpg&w=384&q=75 2x"
+          style="color: transparent;"
+          width="150"
+        />
+      </div>
+      <div
+        class="MuiBox-root css-130f8nx"
+      >
+        <button
+          class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit MuiIconButton-edgeEnd MuiIconButton-sizeLarge css-1f5y6oa-MuiButtonBase-root-MuiIconButton-root"
+          tabindex="0"
+          type="button"
+        >
+          <svg
+            aria-hidden="true"
+            class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+            data-testid="DeleteOutlineIcon"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6zM8 9h8v10H8zm7.5-5-1-1h-5l-1 1H5v2h14V4z"
+            />
+          </svg>
+          <span
+            class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+          />
+        </button>
+      </div>
+    </div>
+    <hr
+      class="MuiDivider-root MuiDivider-fullWidth css-9mgopn-MuiDivider-root"
+    />
+    <div
+      class="MuiStack-root css-19qajtz-MuiStack-root"
+    >
+      <p
+        class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+        data-testid="total-cost"
+      >
+        Total Cost : €750.00
+      </p>
+    </div>
+    <div
+      class="MuiStack-root css-19qajtz-MuiStack-root"
+    >
+      <button
+        class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeLarge MuiButton-containedSizeLarge MuiButton-colorPrimary MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeLarge MuiButton-containedSizeLarge MuiButton-colorPrimary css-jh47zj-MuiButtonBase-root-MuiButton-root"
+        tabindex="0"
+        type="button"
+      >
+        Pay Now
+        <span
+          class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+        />
+      </button>
+    </div>
+  </div>
+</DocumentFragment>
+`;
