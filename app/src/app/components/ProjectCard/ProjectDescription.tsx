@@ -13,7 +13,7 @@ function ProjectDescription() {
   return  (
     <>
     <DividerStyle />
-    <Typography data-test-id="description">{project.description}</Typography>
+    <Typography>{project.description}</Typography>
     <DividerStyle />
   </>
   )

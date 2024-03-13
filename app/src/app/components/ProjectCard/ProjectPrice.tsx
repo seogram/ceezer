@@ -5,7 +5,7 @@ import { Typography } from "@mui/material";
 function ProjectPrice() {
   const { project } = useProjectCardContext();
   return (
-    <Typography data-test-id="price">
+    <Typography>
      Price: {project.price_per_ton} €
     </Typography>
   );

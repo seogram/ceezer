@@ -1,11 +1,11 @@
 import useCart from "./useCart";
 import { setLocalStorage } from "../utils";
-import { cartItem } from "../type";
+import { CartItem as CartItemType } from "../type";
 
 const useAddItem = () => {
   const { cartItems, setCartItems } = useCart();
 
-  const addItem = (cartItem: cartItem) => {
+  const addItem = (cartItem: CartItemType) => {
     const currentCartItems = [...cartItems];
     const existingCartItem = currentCartItems.find(
       (item) => item.id === cartItem.id

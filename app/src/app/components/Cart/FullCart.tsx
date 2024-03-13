@@ -2,10 +2,12 @@
 import { useRouter } from "next/navigation";
 import { Typography, Button, Box, Stack, Divider } from "@mui/material";
 import { styled } from '@mui/material/styles';
-import { useAddItem, useRemoveItem } from "@/app/hooks";
-import { CustomeLink } from "..";
-import { cartItem } from "@/app/type";
+import { useCartActions } from "@/app/hooks";
+import { CartItem as CartItemType } from "@/app/type";
 import CartItem from "./CartItem";
+import { formatCurrency } from "@/app/utils";
+import EmptyCart from "./EmptyCart";
+import { memo } from "react";
 
 const StyledBox = styled(Box)(({ theme }) => ({
     padding: theme.spacing(2),
@@ -13,28 +15,19 @@ const StyledBox = styled(Box)(({ theme }) => ({
     textAlign: 'center',
 }));
 
-const FullCart = ({ totalCost, cartItems }: { totalCost: number, cartItems: cartItem[] }) => {
+const FullCart = ({ totalCost, cartItems }: { totalCost: number, cartItems: CartItemType[] }) => {
 
     const router = useRouter();
-    const { removeItem } = useRemoveItem();
-    const { addItem } = useAddItem();
+    const { addItem, removeItem } = useCartActions();
+
+    const handlePayNow = () => router.push("/");
+
+    const hasCartItems = cartItems.length > 0;
 
     return (
         <StyledBox data-testid="cart">
             {
-                cartItems?.length < 1 ? (
-                    <Stack direction="column">
-                        <Typography>
-                            There is no item in shopping cart.
-                        </Typography>
-                        <CustomeLink href="/">
-                            <Typography color="primary">
-                                Back
-                            </Typography>
-                        </CustomeLink>
-
-                    </Stack>
-                ) : (
+                hasCartItems ? (
                     <>
                         {cartItems.map((item) => (
                             <CartItem
@@ -49,8 +42,8 @@ const FullCart = ({ totalCost, cartItems }: { totalCost: number, cartItems: cart
                             sx: "center",
                             sm: "flex-start"
                         }}>
-                            <Typography>
-                                Total Cost : {totalCost}
+                            <Typography data-testid="total-cost">
+                                Total Cost : {formatCurrency(totalCost)}
                             </Typography>
                         </Stack>
 
@@ -59,13 +52,14 @@ const FullCart = ({ totalCost, cartItems }: { totalCost: number, cartItems: cart
                             sx: "center",
                             sm: "flex-start"
                         }}>
-                            <Button variant="contained" size="large" onClick={() => router.push("/")}>Pay Now</Button>
+                            <Button variant="contained" size="large" onClick={handlePayNow}>Pay Now</Button>
                         </Stack>
                     </>
-                )
+                ) :
+                    <EmptyCart />
             }
         </StyledBox>
     );
 }
 
-export default FullCart;
+export default memo(FullCart);

@@ -4,7 +4,7 @@ import { Typography } from "@mui/material";
 
 function ProjectVolume() {
   const { project } = useProjectCardContext();
-  return <Typography data-test-id="volume">Volume (tons): {project.offered_volume_in_tons}</Typography>;
+  return <Typography>Volume (tons): {project.offered_volume_in_tons}</Typography>;
 }
 
 export default ProjectVolume;

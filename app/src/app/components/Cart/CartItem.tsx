@@ -1,78 +1,97 @@
 import Image from "next/image";
-import { Typography, Button, Box, Stack, IconButton } from "@mui/material";
+import { Typography, Box, Stack, IconButton } from "@mui/material";
 import { styled } from '@mui/material/styles';
 import { formatCurrency } from "@/app/utils";
 import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
-import { cartItem } from "@/app/type";
-import useUpdateItem from "@/app/hooks/useUpdateItem";
+import { CartItem as CartItemType } from "@/app/type";
+import { useCartActions } from "@/app/hooks";
 
 type Props = {
-    item: cartItem;
-    addToCart: (clickedItem: cartItem) => void;
-    removeFromCart: (item: cartItem) => void;
+    item: CartItemType;
+    addToCart: (clickedItem: CartItemType) => void;
+    removeFromCart: (item: CartItemType) => void;
 };
 
 const Wrapper = styled(Stack)(() => ({
-    padding: "1rem",
-    flex: 1
+    padding: "1rem 0",
 }));
 
 const InfoWrapper = styled(Box)(() => ({
-    textAlign: "justify",
-    paddingBottom: "20px"
+    textAlign: "left",
+    paddingBottom: "1.5rem"
 }));
 
-const ButtonWrapper = styled(Stack)(() => ({
-    display: "flex", pt: 2
-}));
 
-const CartItem = ({ item, addToCart, removeFromCart }: Props) => {
-    const { updateItem } = useUpdateItem();
 
+const CartItem = ({ item, removeFromCart }: Props) => {
+    const { updateItem } = useCartActions();
+    
     return (
-        <Wrapper direction="row" gap={2} justifyContent="space-between" >
-            <Box >
+        <Wrapper direction="row" gap={2} >
+            <Box sx={{ flex: 1 }}>
                 <InfoWrapper>
                     <Typography variant="h6">{item.name}</Typography>
                     <Typography>Price per ton: {formatCurrency(item.pricePerTon)}</Typography>
                     <Typography>Volume(ton): {item.volume}</Typography>
                     <Typography>Total Price: {formatCurrency(item.pricePerTon * item.volume)}</Typography>
                 </InfoWrapper>
-                <ButtonWrapper direction="row" spacing={2} >
-                    <Button
-                        size="small"
-                        disableElevation
-                        variant="contained"
+                <Stack direction="row" spacing={1} alignItems="center">
+                    <IconButton
+                        data-testid="decrease-volume"
+                        size="large"
                         onClick={() => updateItem(item, "DECREASE")}
                     >
                         -
-                    </Button>
+                    </IconButton>
                     <Box>
                         {item.volume}
                     </Box>
-                    <Button
-                        size="small"
-                        disableElevation
-                        variant="contained"
+                    <IconButton
+                        data-testid="increase-volume"
+                        size="large"
                         onClick={() => updateItem(item, "INCREASE")}
                     >
                         +
-                    </Button>
-                </ButtonWrapper>
+                    </IconButton>
+                    <Box
+                        sx={{
+                            display: {
+                                xs: "flex",
+                                sm: "none"
+                            }
+                        }}
+                    >
+                        <IconButton
+                            data-testid="remove-item"
+                            size="large"
+                            edge="end"
+                            onClick={() => removeFromCart(item)}
+                            color="inherit"
+                        >
+                            <DeleteOutlineIcon />
+                        </IconButton>
+                    </Box>
+                </Stack>
             </Box>
-            <Image
-                src={item.image ?? ""}
-                alt={item.name}
-                width={150}
-                height={160}
-            />
             <Box>
+                <Image
+                    src={item.image ?? ""}
+                    alt={item.name}
+                    width={150}
+                    height={160}
+                />
+            </Box>
+            <Box
+                sx={{
+                    display: {
+                        xs: "none",
+                        sm: "block"
+                    }
+                }}
+            >
                 <IconButton
                     size="large"
                     edge="end"
-                    aria-label="account of current user"
-                    aria-controls="Cart"
-                    aria-haspopup="true"
                     onClick={() => removeFromCart(item)}
                     color="inherit"
                 >

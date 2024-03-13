@@ -13,14 +13,14 @@ const StyledBox = styled(Box)(() => ({
 }));
 
 const Header = ({ noCart = false }: { noCart?: boolean }) => (
-    <Box sx={{ flexGrow: 1 }}>
+    <Box sx={{ flex: 1 }}>
         <AppBar position="static">
             <Toolbar>
                 <Typography
                     variant="h6"
                     noWrap
                     component="div"
-                    sx={{ display: { xs: "none", sm: "block" } }}
+                    
                 >
                     CEEZER
                 </Typography>

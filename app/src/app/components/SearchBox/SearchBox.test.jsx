@@ -24,7 +24,7 @@ describe("SearchBox Component", () => {
     const buttonElement = getByText("Search");
 
     act(() => {
-      fireEvent.change(inputElement, { target: { value: "JohnDoe" } });
+      fireEvent.change(inputElement, { target: { value: "Green" } });
     });
 
     expect(buttonElement).not.toBeDisabled();
@@ -35,7 +35,7 @@ describe("SearchBox Component", () => {
 
     await waitFor(() => {
       expect(router.replace).toHaveBeenCalled();
-      expect(router.replace).toHaveBeenCalledWith("/?key=JohnDoe");
+      expect(router.replace).toHaveBeenCalledWith("/?key=Green");
     });
   });
 });

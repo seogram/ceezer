@@ -1,60 +1,41 @@
 import React, { useState } from 'react';
 import { useProjectCardContext } from '@/app/context/ProjectCardContext';
 import { Button, Stack, Typography, Tooltip, ClickAwayListener } from "@mui/material";
-import { Project } from "@/app/type";
 
-const renderSdg = (sdgs: Project["sdgs"]) => {
-  return sdgs.slice(0, 3).map(sdg => `${sdg} `)
-}
-
-const displayMoreItems = (sdgs: Project["sdgs"]) => {
-  return (
-    <Typography variant='h6'>
-      {sdgs.slice(3).map(sdg => sdg).join(" ")}
-    </Typography>
-  )
-
-}
-function ProjectSdgs() {
+const ProjectSdgs = () => {
   const { project: { sdgs } } = useProjectCardContext();
   const [open, setOpen] = useState(false);
 
-  const handleTooltipClose = () => {
-    setOpen(false);
-  };
-
-  const handleTooltipOpen = () => {
-    setOpen(true);
-  };
-
-  const shouldDisplayMorItems = sdgs?.length > 3;
   if (!sdgs?.length) return null;
+
+  const handleTooltipToggle = () => setOpen(prev => !prev);
+
+  const shouldDisplayMoreItems = sdgs.length > 3;
 
   return (
     <Stack direction="row" spacing={2} alignItems="center">
-      <Typography data-test-id="sdgs">SDGS: {renderSdg(sdgs)} </Typography>
-      {shouldDisplayMorItems && (
-        <ClickAwayListener onClickAway={handleTooltipClose}>
+      <Typography data-test-id="sdgs">
+        SDGs: {sdgs.slice(0, 3).join(", ")}
+      </Typography>
+      {shouldDisplayMoreItems && (
+        <ClickAwayListener onClickAway={() => setOpen(false)}>
           <div>
             <Tooltip
-              PopperProps={{
-                disablePortal: true,
-              }}
-              onClose={handleTooltipClose}
+              PopperProps={{ disablePortal: true }}
+              onClose={() => setOpen(false)}
               open={open}
               disableFocusListener
               disableHoverListener
               disableTouchListener
-              title={displayMoreItems(sdgs)}
+              title={<Typography variant='h6'>{sdgs.slice(3).join(", ")}</Typography>}
             >
-              <Button onClick={handleTooltipOpen}>Show more</Button>
+              <Button onClick={handleTooltipToggle}>Show more</Button>
             </Tooltip>
           </div>
         </ClickAwayListener>
-
       )}
     </Stack>
-  )
-}
+  );
+};
 
 export default ProjectSdgs;

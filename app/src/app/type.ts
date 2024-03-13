@@ -14,7 +14,7 @@ export type Project = {
 };
 export type Projects = Project[];
 
-export type cartItem = {
+export type CartItem = {
     id: string;
     name : string;
     volume: number;

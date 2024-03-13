@@ -3,7 +3,7 @@ import { Typography } from "@mui/material";
 
 function ProjectId() {
   const { project } = useProjectCardContext();
-  return <Typography data-test-id="id">ID: {project.id}</Typography>;
+  return <Typography>ID: {project.id}</Typography>;
 }
 
 export default ProjectId;

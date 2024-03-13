@@ -31,13 +31,12 @@ type Props = {
 };
 
 function ProjectCard({ info, image, project,action }: Props) {
-
     const isDesktop = useResponsive("up", "md");
 
     return (
         <ProjectCardContext.Provider value={{ project }}>
             <RootStyle>
-                <WrapperStyle key={project.id}>
+                <WrapperStyle key={project.id} data-testid="project-card">
                     <Stack direction={isDesktop ? "row" : "column"} justifyContent="space-between" alignItems="center" rowGap={2}>
                         {info}
                         <RightBoxStyle alignItems="center">

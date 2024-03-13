@@ -4,7 +4,7 @@ import { Typography } from "@mui/material";
 
 function ProjectTitle() {
   const { project } = useProjectCardContext();
-  return <Typography variant="h6" data-test-id="title">
+  return <Typography variant="h6">
     {project.name}
   </Typography>
 }

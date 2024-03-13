@@ -4,16 +4,16 @@
 import { createContext, ReactNode } from "react";
 import { useState, useEffect } from "react";
 import { setLocalStorage, getLocalStorage } from "../utils";
-import { cartItem } from "../type";
+import { CartItem as CartItemType } from "../type";
 
 type CartItemsContext = {
-  cartItems: cartItem[],
-  setCartItems: (cartItems: cartItem[]) => void
+  cartItems: CartItemType[],
+  setCartItems: (cartItems: CartItemType[]) => void
 }
 
 export const CartItemsContext = createContext<CartItemsContext>({
   cartItems: [],
-  setCartItems: () => { },
+  setCartItems: () => {},
 });
 
 export const CartItemsProvider = ({ children }: { children: ReactNode }) => {

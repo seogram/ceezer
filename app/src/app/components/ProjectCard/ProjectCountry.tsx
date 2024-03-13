@@ -4,7 +4,7 @@ import { Typography } from "@mui/material";
 
 function ProjectCountry() {
   const { project } = useProjectCardContext();
-  return <Typography data-test-id="country">Country: {project.country}</Typography>;
+  return <Typography>Country: {project.country}</Typography>;
 }
 
 export default ProjectCountry;

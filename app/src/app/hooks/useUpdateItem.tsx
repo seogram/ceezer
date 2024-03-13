@@ -1,11 +1,11 @@
 import useCart from "./useCart";
 import { setLocalStorage } from "../utils";
-import { cartItem } from "../type";
+import { CartItem as CartItemType } from "../type";
 
 const useUpdateItem = () => {
   const { cartItems, setCartItems } = useCart();
 
-  const updateItem = (product: cartItem, action: "INCREASE" | "DECREASE") => {
+  const updateItem = (product: CartItemType, action: "INCREASE" | "DECREASE") => {
     const currentCartItems = [...cartItems];
     const existingCartItem = currentCartItems.find(
       (item) => item.id === product.id
@@ -15,13 +15,12 @@ const useUpdateItem = () => {
       throw new Error("updateCartItem: Product does not exist.");
     }
     if (action === "INCREASE") {
-      existingCartItem.volume += 0.5;
+        existingCartItem.volume += 0.5;
     }
 
     if (action === "DECREASE") {
       existingCartItem.volume <= 0.5 ? currentCartItems.splice(currentCartItems.indexOf(existingCartItem), 1) : existingCartItem.volume -= 0.5;
     }
-
     setLocalStorage("cart", currentCartItems)
     setCartItems(currentCartItems);
   };

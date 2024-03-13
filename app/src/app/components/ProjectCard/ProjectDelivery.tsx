@@ -4,7 +4,7 @@ import { Typography } from "@mui/material";
 
 function ProjectDelivery() {
   const { project } = useProjectCardContext();
-  return <Typography data-test-id="delivery">Earliest Delivery: {project.earliest_delivery}</Typography>;
+  return <Typography>Earliest Delivery: {project.earliest_delivery}</Typography>;
 }
 
 export default ProjectDelivery;
