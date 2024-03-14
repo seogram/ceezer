@@ -1,6 +1,7 @@
 import useCart from "./useCart";
 import { setLocalStorage } from "../utils";
 import { CartItem as CartItemType } from "../type";
+import { VOLUME_GRANULARITY } from "../configs";
 
 const useCartAction = () => {
     const { cartItems, setCartItems } = useCart();
@@ -56,11 +57,11 @@ const useCartAction = () => {
             throw new Error("updateCartItem: Product does not exist.");
         }
         if (action === "INCREASE") {
-            existingCartItem.volume += 0.5;
+            existingCartItem.volume += VOLUME_GRANULARITY;
         }
 
         if (action === "DECREASE") {
-            existingCartItem.volume <= 0.5 ? currentCartItems.splice(currentCartItems.indexOf(existingCartItem), 1) : existingCartItem.volume -= 0.5;
+            existingCartItem.volume <= VOLUME_GRANULARITY ? currentCartItems.splice(currentCartItems.indexOf(existingCartItem), 1) : existingCartItem.volume -= VOLUME_GRANULARITY;
         }
         setLocalStorage("cart", currentCartItems)
         setCartItems(currentCartItems);
