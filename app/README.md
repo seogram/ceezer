@@ -1,4 +1,4 @@
-Deployed version on Vercel : https://ceezer-uerfolw4k-farsie-portal.vercel.app/
+Deployed version on Vercel : https://ceezer-fa1pcpfyo-farsie-portal.vercel.app/
 ## Getting Started
 
 First, run the development server:
