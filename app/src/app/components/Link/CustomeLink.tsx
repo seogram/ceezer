@@ -8,7 +8,10 @@ const StyledLink = styled(Link)(() => ({
   textDecoration: "none"
 }));
 
-const CustomeLink = ({ children, href }: { children: React.ReactNode, href: string }) => {
+type Props = {
+  children: React.ReactNode, href: string};
+
+const CustomeLink = ({ children, href }: Props) => {
   return (
     <StyledLink href={href}
     >
