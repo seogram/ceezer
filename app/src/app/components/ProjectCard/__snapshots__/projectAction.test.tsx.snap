@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProjectAction Component renders without crashing 1`] = `
+<DocumentFragment>
+  <div
+    class="MuiStack-root css-csv01u-MuiStack-root"
+  >
+    <div
+      class="MuiInputBase-root MuiInputBase-colorPrimary css-1t9f0n0-MuiInputBase-root"
+    >
+      <input
+        aria-invalid="false"
+        class="MuiInputBase-input css-yz9k0d-MuiInputBase-input"
+        max="15"
+        min="0"
+        name="volume"
+        placeholder="Volume"
+        type="number"
+        value=""
+      />
+    </div>
+    <button
+      class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary Mui-disabled MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary css-sghohy-MuiButtonBase-root-MuiButton-root"
+      disabled=""
+      name="search"
+      tabindex="-1"
+      type="button"
+    >
+      Add to Card
+    </button>
+  </div>
+  <div
+    class="MuiStack-root css-nen11g-MuiStack-root"
+  />
+</DocumentFragment>
+`;

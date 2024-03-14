@@ -10,7 +10,7 @@ export type Project = {
     supplier_name: string; 
     earliest_delivery: string; 
     sdgs: number[], 
-    description: "string"
+    description: string
 };
 export type Projects = Project[];
 
@@ -18,6 +18,7 @@ export type CartItem = {
     id: string;
     name : string;
     volume: number;
+    offeredVolume : number;
     pricePerTon : number;
     image? : string;
 }

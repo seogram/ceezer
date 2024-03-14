@@ -25,7 +25,20 @@ const InfoWrapper = styled(Box)(() => ({
 
 const CartItem = ({ item, removeFromCart }: Props) => {
     const { updateItem } = useCartActions();
-    
+
+    const cartUpdateHandler = (item: CartItemType, action: "DECREASE" | "INCREASE") => {
+        
+        if (item && action === "INCREASE") {
+            const existingVolume = item.volume;
+            const { offeredVolume } = item
+            if (existingVolume === offeredVolume || existingVolume + 0.5 > offeredVolume) {
+                return;
+            }
+        }
+
+        updateItem(item, action)
+    }
+
     return (
         <Wrapper direction="row" gap={2} >
             <Box sx={{ flex: 1 }}>
@@ -39,7 +52,7 @@ const CartItem = ({ item, removeFromCart }: Props) => {
                     <IconButton
                         data-testid="decrease-volume"
                         size="large"
-                        onClick={() => updateItem(item, "DECREASE")}
+                        onClick={() => cartUpdateHandler(item, "DECREASE")}
                     >
                         -
                     </IconButton>
@@ -49,7 +62,7 @@ const CartItem = ({ item, removeFromCart }: Props) => {
                     <IconButton
                         data-testid="increase-volume"
                         size="large"
-                        onClick={() => updateItem(item, "INCREASE")}
+                        onClick={() => cartUpdateHandler(item, "INCREASE")}
                     >
                         +
                     </IconButton>

@@ -2,14 +2,18 @@ import React from "react";
 import { Typography } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 
-
-const Error = () => {
+type Props = {
+  message?: String
+}
+const CustomError = ({ message }: Props) => {
   const theme = useTheme();
+  const errorMessage = message ?? "Something went wrong...";
+
   return (
     <Typography sx={{ color: theme.palette.error.main }}>
-    Something went wrong...
-  </Typography>
+      {errorMessage}
+    </Typography>
   );
 }
 
-export default Error;
+export default CustomError;
