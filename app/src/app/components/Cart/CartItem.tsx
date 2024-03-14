@@ -5,6 +5,7 @@ import { formatCurrency } from "@/app/utils";
 import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
 import { CartItem as CartItemType } from "@/app/type";
 import { useCartActions } from "@/app/hooks";
+import { VOLUME_GRANULARITY } from "@/app/configs";
 
 type Props = {
     item: CartItemType;
@@ -31,7 +32,7 @@ const CartItem = ({ item, removeFromCart }: Props) => {
         if (item && action === "INCREASE") {
             const existingVolume = item.volume;
             const { offeredVolume } = item
-            if (existingVolume === offeredVolume || existingVolume + 0.5 > offeredVolume) {
+            if (existingVolume === offeredVolume || existingVolume + VOLUME_GRANULARITY > offeredVolume) {
                 return;
             }
         }

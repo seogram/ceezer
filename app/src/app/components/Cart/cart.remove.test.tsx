@@ -3,7 +3,7 @@ import { render, fireEvent } from '@testing-library/react';
 import Cart from './Cart';
 import { MockCartItemData } from "../Projects/data";
 import { useCart } from "@/app/hooks";
-import { CartItemsContext } from '@/app/context/CartItems';
+import { CartItemsContext } from '@/app/context/CartItemsContext';
 
 jest.mock("../../hooks/useCart");
 
