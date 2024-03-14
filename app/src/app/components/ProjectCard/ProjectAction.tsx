@@ -1,9 +1,9 @@
-import * as React from 'react';
 import { useProjectCardContext } from '@/app/context/ProjectCardContext';
-import { Button, Stack, InputBase, Typography } from "@mui/material";
+import { Button, Stack, InputBase } from "@mui/material";
 import { Controller, useForm } from "react-hook-form";
 import { styled } from "@mui/material/styles";
 import { useCartActions, useCart } from '@/app/hooks';
+import CustomError from '../Error/Error';
 
 type Volume = {
   volume: string;
@@ -38,14 +38,15 @@ function ProjectAction() {
   });
 
   const volume = Number(watch("volume"));
+  const { id, name, offered_volume_in_tons, price_per_ton, image } = project;
 
   const addToCardHandler = () => {
     const existingCartItem = cartItems.find(
-      (item) => item.id === project.id
+      (item) => item.id === id
     );
     if (existingCartItem) {
       const existingVolume = existingCartItem.volume;
-      const possibleVolume = project.offered_volume_in_tons;
+      const possibleVolume = offered_volume_in_tons;
       if (existingVolume === possibleVolume || existingVolume + volume > possibleVolume) {
         setError("volume", { type: "value" });
         return;
@@ -53,11 +54,12 @@ function ProjectAction() {
     }
     setValue("volume", "")
     addItem({
-      id: project.id,
-      name: project.name,
+      id,
+      name,
       volume,
-      pricePerTon: project.price_per_ton,
-      image: project.image
+      offeredVolume: offered_volume_in_tons,
+      pricePerTon: price_per_ton,
+      image
     })
   }
   return (
@@ -75,7 +77,7 @@ function ProjectAction() {
               type="number"
               inputProps={{
                 min: 0,
-                max: project.offered_volume_in_tons
+                max: offered_volume_in_tons
               }}
               placeholder="Volume"
               error={Boolean(error)}
@@ -84,7 +86,7 @@ function ProjectAction() {
         />
 
         <Button
-          disabled={!volume || volume === 0}
+          disabled={!volume || volume === 0 || volume > offered_volume_in_tons}
           variant="contained"
           onClick={
             handleSubmit(addToCardHandler)}
@@ -93,15 +95,13 @@ function ProjectAction() {
           Add to Card
         </Button>
       </Stack>
+
       <Stack>
-        {errors?.volume?.type === "value" ? (
-          <Typography color="red">
-            Volume amount is not possible to order
-          </Typography>
-        ) : errors.volume?.message}
+        {errors?.volume?.type === "value" && (
+          <CustomError message="Volume amount is not possible to order" />
+        )}
       </Stack>
     </>
-
   )
 }
 

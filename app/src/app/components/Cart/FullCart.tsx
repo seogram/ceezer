@@ -18,9 +18,12 @@ const StyledBox = styled(Box)(({ theme }) => ({
 const FullCart = ({ totalCost, cartItems }: { totalCost: number, cartItems: CartItemType[] }) => {
 
     const router = useRouter();
-    const { addItem, removeItem } = useCartActions();
+    const { addItem, removeItem ,removeAllItems} = useCartActions();
 
-    const handlePayNow = () => router.push("/");
+    const handlePayNow = () =>{
+        removeAllItems();
+        router.push("/")
+    };
 
     const hasCartItems = cartItems.length > 0;
 

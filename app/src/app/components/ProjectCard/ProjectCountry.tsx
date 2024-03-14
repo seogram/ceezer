@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { useProjectCardContext } from '@/app/context/ProjectCardContext';
 import { Typography } from "@mui/material";
 

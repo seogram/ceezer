@@ -40,6 +40,12 @@ const useCartAction = () => {
         setCartItems(currentCartItems);
     };
 
+    const removeAllItems = () => {
+       
+        setLocalStorage("cart", [])
+        setCartItems([]);
+    };
+
     const updateItem = (product: CartItemType, action: "INCREASE" | "DECREASE") => {
         const currentCartItems = [...cartItems];
         const existingCartItem = currentCartItems.find(
@@ -59,7 +65,7 @@ const useCartAction = () => {
         setLocalStorage("cart", currentCartItems)
         setCartItems(currentCartItems);
     };
-    return { addItem, removeItem, updateItem };
+    return { addItem, removeItem, updateItem , removeAllItems };
 }
 
 export default useCartAction;

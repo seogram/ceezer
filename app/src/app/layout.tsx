@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v13-appRouter";
 import { ReactQueryProvider } from "./ReactQueryProvider";
 import ThemeProvider from "../theme";
-import { CartItemsProvider } from "./context/cartItems";
+import { CartItemsProvider } from "./context/CartItems";
 
 export const metadata: Metadata = {
   title: "Create Next App",

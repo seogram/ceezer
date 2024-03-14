@@ -1,9 +1,9 @@
 import React from 'react';
-import { render, fireEvent, cleanup, RenderResult } from '@testing-library/react';
+import { render, fireEvent } from '@testing-library/react';
 import Cart from './Cart';
 import { MockCartItemData } from "../Projects/data";
 import { useCart } from "@/app/hooks";
-import { CartItemsContext } from '@/app/context/cartItems';
+import { CartItemsContext } from '@/app/context/CartItems';
 
 jest.mock("../../hooks/useCart");
 
@@ -30,6 +30,7 @@ const updatedCartAfterDelete = [
     "id": "3",
     "image": "https://ceezer-public-assets.s3.eu-central-1.amazonaws.com/project_type_sample_images/Afforestation+reforestation/marita-kavelashvili-ugnrXk1129g-unsplash-min.jpg",
     "name": "SustainaForest Carbon",
+    "offeredVolume": 3,
     "pricePerTon": 50,
     "volume": 2
   }

@@ -1,6 +1,6 @@
 export const MockData = [
     {
-        "id": 1,
+        "id": "1",
         "name": "EverGreen CarbonScape",
         "country": "Germany",
         "image": "https://ceezer-public-assets.s3.eu-central-1.amazonaws.com/project_type_sample_images/Fugitives/38bb530f5caf513be9f2a41f2d909f47-min.jpeg",
@@ -13,7 +13,7 @@ export const MockData = [
         "description": "The \"EverGreen CarbonScape\" project is dedicated to combatting climate change by restoring and preserving vital forest ecosystems.\nThrough reforestation, afforestation, and sustainable forest management, we aim to create robust carbon sinks while promoting biodiversity, engaging local communities, and preventing deforestation."
     },
     {
-        "id": 2,
+        "id": "2",
         "name": "VerdeCarbon",
         "country": "India",
         "image": "https://ceezer-public-assets.s3.eu-central-1.amazonaws.com/project_type_sample_images/Mineralisation/ben-karpinski-ctWw2S9VqOI-unsplash-min.jpg",
@@ -30,7 +30,7 @@ export const MockData = [
         "description": "A transformative carbon credit project dedicated to revitalizing ecosystems and fighting climate change.\nBy strategically planting native trees and adopting sustainable forest practices, we're creating a potent solution that not only absorbs carbon dioxide but also nurtures biodiversity and empowers local communities.\nThrough verified carbon credits, VerdeCarbon is a beacon of environmental stewardship and positive impact."
     },
     {
-        "id": 3,
+        "id": "3",
         "name": "SustainaForest Carbon",
         "country": "Brazil",
         "image": "https://ceezer-public-assets.s3.eu-central-1.amazonaws.com/project_type_sample_images/Afforestation+reforestation/marita-kavelashvili-ugnrXk1129g-unsplash-min.jpg",
@@ -47,7 +47,7 @@ export const MockData = [
         "description": "The \"SustainaForest Carbon\" project tackles climate change by restoring and protecting vital forest ecosystems.\nThrough reforestation, sustainable management, and community engagement, we're creating resilient carbon sinks that benefit the environment, biodiversity, and local communities.\nVerified carbon credits will be generated as we capture CO2, fostering a sustainable future for all."
     },
     {
-        "id": 4,
+        "id": "4",
         "name": "EcoRespire",
         "country": "India",
         "image": "https://ceezer-public-assets.s3.eu-central-1.amazonaws.com/project_type_sample_images/Climate+fund/climate-fund.png",
@@ -69,7 +69,7 @@ export const MockData = [
         "description": "A project dedicated to revitalizing our planet by rejuvenating and conserving critical forest ecosystems.\nBy planting native trees, practicing sustainable forest management, and engaging with local communities, EcoRespire aims to capture carbon dioxide, promote biodiversity, and empower communities.\nVerified carbon credits will be generated, offering a sustainable solution to combat climate change while fostering environmental and societal well-being."
     },
     {
-        "id": 5,
+        "id": "5",
         "name": "EverGreen Carbon",
         "country": "Egipt",
         "image": "https://ceezer-public-assets.s3.eu-central-1.amazonaws.com/project_type_sample_images/Renewable+energy/andreas-gucklhorn-Ilpf2eUPpUE-unsplash-min.jpg",
@@ -95,6 +95,7 @@ export const MockCartItemData = {
             "id": "1",
             "name": "EverGreen CarbonScape",
             "volume" : 1,
+            "offeredVolume" : 10,
             "image": "https://ceezer-public-assets.s3.eu-central-1.amazonaws.com/project_type_sample_images/Fugitives/38bb530f5caf513be9f2a41f2d909f47-min.jpeg",
             "pricePerTon": 650,
         },
@@ -102,6 +103,7 @@ export const MockCartItemData = {
             "id": "3",
             "name": "SustainaForest Carbon",
             "volume": 2,
+            "offeredVolume" : 3,
             "image": "https://ceezer-public-assets.s3.eu-central-1.amazonaws.com/project_type_sample_images/Afforestation+reforestation/marita-kavelashvili-ugnrXk1129g-unsplash-min.jpg",
             "pricePerTon": 50,
         },

@@ -1,21 +1,27 @@
-import * as React from 'react';
 import { useProjectCardContext } from '@/app/context/ProjectCardContext';
-import { Typography, Divider, styled } from "@mui/material";
+import { Typography, styled, Box, Divider } from "@mui/material";
 
 
-const DividerStyle = styled(Divider)(() => ({
-  width : "95%",my:1
+const Wrapper = styled(Box)(({ theme }) => ({
+  width: "50%",
+  padding: "0.5rem 0",
+  textAlign: "justify",
+  [theme.breakpoints.down("sm")]: {
+    width: "100%",
+  },
 }));
 
 function ProjectDescription() {
   const { project } = useProjectCardContext();
 
-  return  (
+  return (
     <>
-    <DividerStyle />
-    <Typography>{project.description}</Typography>
-    <DividerStyle />
-  </>
+      <Wrapper>
+        <Divider />
+        <Typography>{project.description}</Typography>
+        <Divider />
+      </Wrapper>
+    </>
   )
 
 }
