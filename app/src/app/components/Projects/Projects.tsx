@@ -22,19 +22,13 @@ interface Props {
   searchTerm?: string;
 }
 
-interface UseProjectDataReturn {
-  data: ProjectsType;
-  isFetching: boolean;
-  isError: boolean;
-}
-
 const renderDetails = (projects: ProjectsType) =>
   projects.map((project) => <ProjectDetail projectData={project} key={project.id} />);
 
 
 const Projects = ({ searchTerm = '' }: Props) => {
   const router = useRouter();
-  const { data: projects, isFetching: isProjectFetching, isError } = useData() as UseProjectDataReturn;
+  const { data: projects, isFetching: isProjectFetching, isError } = useData();
 
   if (isError) return <ErrorComponent />;
   if (isProjectFetching) return <Loading />;

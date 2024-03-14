@@ -15,7 +15,11 @@ const StyledBox = styled(Box)(({ theme }) => ({
     textAlign: 'center',
 }));
 
-const FullCart = ({ totalCost, cartItems }: { totalCost: number, cartItems: CartItemType[] }) => {
+type Props = {
+    totalCost: number, cartItems: CartItemType[]
+};
+
+const FullCart = ({ totalCost, cartItems }: Props) => {
 
     const router = useRouter();
     const { addItem, removeItem ,removeAllItems} = useCartActions();

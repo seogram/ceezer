@@ -1,10 +1,18 @@
 import { useQuery } from "react-query";
 import { BASE_URL } from "../configs";
+import type { Projects as ProjectsType } from '@/app/type';
 
 const logSentry = (error:Error) => {
   //Log in Sentry or other log systems
   throw error;
 };
+
+interface UseProjectDataReturn {
+  data: ProjectsType;
+  isFetching: boolean;
+  isError: boolean;
+  error: unknown
+}
 
 const getData = async () => {
 
@@ -22,7 +30,7 @@ const getData = async () => {
   return response;
 };
 
-export function useData() {
+export function useData():UseProjectDataReturn {
 
   const { isFetching, isError, data, error } = useQuery(
     "projects",
